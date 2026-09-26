@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f5f7" />
+    <meta name="description" content="Afteraccepted，五位朋友的创作工作室。用 Vibe Coding 把想法变成软件、Skills 和插件，也在《Accepted之后》聊聊代码与论文之外的生活。" />
+    <meta property="og:title" content="Afteraccepted — 好奇心，总有下一步。" />
+    <meta property="og:description" content="五位朋友，一个开放的创作空间。软件、Skills、插件，以及《Accepted之后》播客。" />
+    <meta property="og:type" content="website" />
+    <title>Afteraccepted — 好奇心，总有下一步。</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+    <header class="site-header">
+      <div class="nav-shell">
+        <a class="wordmark" href="#home" aria-label="Afteraccepted 首页"><span class="brand-symbol" aria-hidden="true">a<span>→</span></span>Afteraccepted<span class="wordmark-dot">.</span></a>
+        <nav class="desktop-nav" aria-label="主导航">
+          <a href="#work">作品</a><a href="#work" data-category-link="skills">Skills</a><a href="#work" data-category-link="plugins">插件</a><a href="#podcast">播客</a><a href="#about">关于我们</a>
+        </nav>
+        <a class="github-link" href="https://github.com/franklai-rise/After-Accepted" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        <button class="menu-toggle" aria-label="打开导航" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button>
+      </div>
+      <nav id="mobile-nav" class="mobile-nav" aria-label="移动端导航" hidden>
+        <a href="#work">作品</a><a href="#work" data-category-link="skills">Skills</a><a href="#work" data-category-link="plugins">插件</a><a href="#podcast">播客</a><a href="#about">关于我们</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero section-shell" id="home" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">FIVE FRIENDS. ENDLESS POSSIBILITIES.</p>
+          <h1 id="hero-title">好奇心，<br /><span>总有下一步。</span></h1>
+          <p class="hero-description">我们是 Afteraccepted。<br />五个朋友，把灵光一现，变成触手可及。</p>
+          <div class="hero-actions"><a class="button button-blue" href="#work">探索我们的作品 <span aria-hidden="true">↗</span></a><a class="text-link" href="#podcast">听听我们的声音 <span aria-hidden="true">›</span></a></div>
+        </div>
+        <div class="hero-visual" aria-label="Afteraccepted 创作宣言">
+          <div class="hero-art" id="hero-art" hidden><img src="./assets/studio-sculpture.webp" alt="五道银蓝色的环相互交织，象征五位朋友一起创作。" width="1200" height="800" fetchpriority="high" /></div>
+          <div class="hero-type" id="hero-type" aria-hidden="true"><span>what's</span><span>next<span class="blue">?</span></span></div>
+          <div class="visual-caption"><span>IDEAS → SOMETHING REAL</span><span>AFTERACCEPTED STUDIO</span></div>
+        </div>
+      </section>
+      <div class="studio-note"><p>代码之外，还有生活。<span>欢迎来到我们的共同创作空间。</span><a href="#about">认识 Afteraccepted <span aria-hidden="true">›</span></a></p></div>
+
+      <section class="work-section section-shell" id="work" aria-labelledby="work-title">
+        <div class="section-heading"><div><p class="eyebrow">MADE WITH CURIOSITY</p><h2 id="work-title">小小的想法。<span>实实在在的作品。</span></h2></div><span class="section-aside">Vibe it. Build it. Share it.</span></div>
+        <div class="category-tabs" role="group" aria-label="筛选作品类别">
+          <button class="category-tab active" data-filter="all" aria-pressed="true">全部探索</button>
+          <button class="category-tab" data-filter="software" aria-pressed="false">软件程序</button>
+          <button class="category-tab" data-filter="skills" aria-pressed="false">Skills</button>
+          <button class="category-tab" data-filter="plugins" aria-pressed="false">插件</button>
+        </div>
+        <div class="work-grid" id="work-grid"></div>
+        <p class="collection-note" id="collection-note" aria-live="polite">第一批作品正在整理，敬请期待。</p>
+      </section>
+
+      <section class="podcast-section section-shell" id="podcast" aria-labelledby="podcast-title">
+        <div class="section-heading"><div><p class="eyebrow">OFF THE RECORD. ON THE MIC.</p><h2 id="podcast-title">合上电脑。<span>打开话匣子。</span></h2></div><span class="section-aside">THE AFTER HOURS</span></div>
+        <div class="podcast-feature">
+          <div class="podcast-cover" role="img" aria-label="Accepted之后播客的首版文字封面：论文可以 Accepted，人生没有最终稿。">
+            <div class="cover-top"><span>THE PODCAST</span><span>↗</span></div>
+            <div class="cover-title">Accepted<span>之后<span class="cover-period">.</span></span></div>
+            <div class="cover-lines" aria-hidden="true"></div>
+            <div class="cover-bottom"><span>PAPERS · COFFEE<br />LIFE · IDEAS</span><span class="cover-stamp">a→</span></div>
+          </div>
+          <div class="podcast-copy"><p class="eyebrow">ACCEPTED之后</p><h3>论文可以 Accepted，<br /><span>人生没有最终稿。</span></h3><p>一档由研究生朋友共同发起的聊天播客。从 AI、意识到成长与人生选择，我们把那些写不进论文的问题，认真聊到底。</p><p class="podcast-secondary">没有标准答案，只有好奇、咖啡，和还没聊完的话。</p><a class="text-link" href="#episodes">看看我们在聊什么 <span aria-hidden="true">↓</span></a><div class="podcast-tags"><span>科技与人</span><span>哲学思考</span><span>成长与选择</span></div></div>
+        </div>
+        <div class="episodes-heading" id="episodes"><h3>两期对话，更多问题。</h3><span>EPISODES</span></div>
+        <div id="episode-list" class="episode-list"></div>
+        <div class="listen-links" id="listen-links"></div>
+      </section>
+
+      <section class="about-section" id="about" aria-labelledby="about-title">
+        <div class="section-shell about-inner">
+          <p class="eyebrow">A SMALL STUDIO. A SHARED CURIOSITY.</p>
+          <h2 id="about-title">五个朋友。<br /><span>不止一种可能。</span></h2>
+          <p class="about-description">我们因不同的兴趣相聚，也因为同样的好奇继续同行。<br class="desktop-break" />用 Vibe Coding 做点有用的东西，用播客聊点在意的事情。</p>
+          <div class="friends" aria-label="由五位朋友共同组成的工作室"><span class="friend friend-1">a</span><span class="friend friend-2">a</span><span class="friend friend-3">a</span><span class="friend friend-4">a</span><span class="friend friend-5">a</span></div>
+          <p class="friends-caption">五种视角，一个 Afteraccepted。</p>
+          <div class="about-values"><span>保持好奇</span><span>动手创造</span><span>一起分享</span></div>
+        </div>
+      </section>
+      <section class="closing section-shell"><p>Accepted 不是终点。</p><h2>下一件有趣的事，<span>一起做。</span></h2><a class="text-link" href="https://github.com/franklai-rise/After-Accepted" target="_blank" rel="noopener noreferrer">在 GitHub 看看我们 <span aria-hidden="true">↗</span></a></section>
+    </main>
+    <footer class="site-footer section-shell"><div class="footer-top"><a class="wordmark" href="#home">Afteraccepted<span class="wordmark-dot">.</span></a><span>Build with curiosity. Stay for the conversation.</span></div><div class="footer-bottom"><span>© <span id="copyright-year">2026</span> Afteraccepted Studio</span><div><a href="#work">作品</a><a href="#podcast">播客</a><a href="#about">关于</a><a href="https://github.com/franklai-rise/After-Accepted" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div><span>Made by five friends.</span></div></footer>
+    <dialog id="detail-dialog" aria-labelledby="dialog-title"><button class="dialog-close" aria-label="关闭详情">×</button><div id="dialog-content"></div></dialog>
+  </body>
+</html>

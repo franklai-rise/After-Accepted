@@ -1,0 +1,12 @@
+{
+  "name": "afteraccepted",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Afteraccepted — a creative studio by five friends.",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node --check app.js && node --check site-data.js && node --check scripts/serve.mjs && node --check scripts/build.mjs"
+  }
+}
