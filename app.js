@@ -1,4 +1,4 @@
-import { categories, projects, podcast } from './site-data.js';
+import { categories, projects, podcast } from './site-data.js?v=20260926-warm';
 
 const escapeHTML = (value) => String(value).replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 const safeURL = (value) => {
@@ -55,7 +55,7 @@ dialog.addEventListener('close', () => { document.body.classList.remove('dialog-
 document.querySelector('#episode-list').innerHTML = podcast.episodes.map((episode) => {
   const url = safeURL(episode.url);
   const audio = safeURL(episode.audioUrl);
-  return `<details class="episode"><summary><span class="episode-number">EP ${escapeHTML(episode.number)}</span><span class="episode-title">${escapeHTML(episode.title)}</span><span class="episode-tags">${escapeHTML(episode.tags)}</span><span class="episode-plus" aria-hidden="true">+</span></summary><div class="episode-body"><p>${escapeHTML(episode.description)}</p>${audio ? `<audio controls preload="none" aria-label="播放：${escapeHTML(episode.title)}" src="${escapeHTML(audio)}">你的浏览器不支持音频播放。</audio>` : ''}${url ? `<p><a class="text-link" href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">收听本期节目 ↗</a></p>` : !audio ? '<p class="audio-pending">收听链接即将更新。</p>' : ''}</div></details>`;
+  return `<details class="episode"><summary>${safeURL(episode.image) ? `<img class="episode-cover" src="${escapeHTML(safeURL(episode.image))}" alt="第 ${escapeHTML(episode.number)} 期节目海报" width="1254" height="1254" loading="lazy" />` : ''}<span class="episode-info"><span class="episode-number">EP ${escapeHTML(episode.number)}</span><span class="episode-title">${escapeHTML(episode.title)}</span><span class="episode-tags">${escapeHTML(episode.tags)}</span><span class="episode-more">本期聊什么 <span class="episode-plus" aria-hidden="true">+</span></span></span></summary><div class="episode-body"><p>${escapeHTML(episode.description)}</p>${audio ? `<audio controls preload="none" aria-label="播放：${escapeHTML(episode.title)}" src="${escapeHTML(audio)}">你的浏览器不支持音频播放。</audio>` : ''}${url ? `<p><a class="text-link" href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">收听本期节目 ↗</a></p>` : !audio ? '<p class="audio-pending">收听链接即将更新。</p>' : ''}</div></details>`;
 }).join('');
 const platforms = podcast.platforms.filter((platform) => safeURL(platform.url));
 document.querySelector('#listen-links').innerHTML = platforms.length ? platforms.map((platform) => `<a href="${escapeHTML(safeURL(platform.url))}" target="_blank" rel="noopener noreferrer">在${escapeHTML(platform.label)}收听 ↗</a>`).join('') : '<span>节目收听入口即将更新，先从一个感兴趣的问题开始。</span>';
@@ -74,9 +74,3 @@ document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && 
 matchMedia('(min-width: 761px)').addEventListener('change', (event) => { if (event.matches) closeMenu(); });
 document.querySelector('#copyright-year').textContent = new Date().getFullYear();
 renderWork();
-
-// The typographic hero remains a coherent fallback if the optional artwork cannot load.
-const heroImage = document.querySelector('#hero-art img');
-function showHeroImage() { if (heroImage.naturalWidth > 0) { document.querySelector('#hero-art').hidden = false; document.querySelector('#hero-type').hidden = true; } }
-heroImage.addEventListener('load', showHeroImage);
-if (heroImage.complete) showHeroImage();

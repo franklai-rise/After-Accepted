@@ -15,7 +15,7 @@ export const podcast = {
   // Add confirmed official show URLs; platforms without URLs are not shown.
   platforms: [], // { label: '小宇宙', url: 'https://...' }
   episodes: [
-    { number: '01', title: '如果我的意识被上传了，那还是“我”吗？', tags: '意识 · AI · 数字生命', description: '从意识上传的设想出发，聊聊记忆、自我与数字生命：当我们谈论“我”，究竟在谈论什么？', url: null, audioUrl: null },
-    { number: '02', title: '我们的选择，真的是自己的吗？', tags: '环境 · 偏好 · 自我', description: '我们的偏好和选择，如何被家庭、环境与经历塑造？从那些看似日常的决定，聊到我们理解中的“真正的自己”。', url: null, audioUrl: null },
+    { number: '01', image: './assets/episode-01.webp', title: '意识是什么？', tags: '意识 · AI · 数字生命', description: '从意识上传的设想出发，聊聊记忆、自我与数字生命：当我们谈论“我”，究竟在谈论什么？', url: null, audioUrl: null },
+    { number: '02', image: './assets/episode-02.webp', title: '我们的选择，真的是自己的吗？', tags: '环境 · 偏好 · 自我', description: '我们的偏好和选择，如何被家庭、环境与经历塑造？从那些看似日常的决定，聊到我们理解中的“真正的自己”。', url: null, audioUrl: null },
   ],
 };
